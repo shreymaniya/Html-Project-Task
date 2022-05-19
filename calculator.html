@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>Calculator</title>
+    <script>
+        function dis(val) {
+            document.getElementById("result").value += val
+        }
+        function solve() {
+            let x = document.getElementById("result").value
+            let y = eval(x)
+            document.getElementById("result").value = y
+        }
+        function clr() {
+            document.getElementById("result").value = ""
+        }
+        window.addEventListener("keypress",(e)=>{if(e.keyCode==13){solve()}});
+    </script>
+    <style>
+        *{
+            color: whitesmoke;
+        }
+        body {
+            font-family: cursive;
+            background-color: blueviolet;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        hr {
+            border: 1px solid black;
+        }
+
+        table {
+            color: rgba(255, 255, 255, 0.324);
+            background: rgba(255, 36, 36, 0.116);
+            border-radius: 8px;
+            box-shadow: 0 0.44px 300px rgb(0, 255, 247);
+            backdrop-filter: blur(2.2px);
+            -webkit-backdrop-filter: blur(20.2px);
+            border: 1px solid rgba(0, 217, 255, 0.297);
+            padding: 15px;
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+            -ms-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        input{
+            font-size: 25px;
+        }
+        input[type="button"] {
+            background-color: #4799E9;
+            color: rgb(255, 255, 255);
+            border: solid black 2px;
+            width: 64px;
+            height: 64px;
+        }
+
+        input[type="button"]:hover {
+            background-color:rgba(0, 213, 255, 0.473);
+        }
+
+        input[type="text"] {
+            border: solid black 2px;
+            width: 200px;
+            height: 58px;
+            font-size: 24px;
+        }
+        #result{
+            background: rgba(0, 0, 0, 0.578);
+            
+        }
+    </style>
+</head>
+
+<body>
+    <h2>HTML/JavaScript Calculator</h2>
+    <hr>
+    <table>
+        <tr>
+            <td colspan="3"><input type="text" id="result" /></td>
+            <td><input type="button" value="c" onclick="clr()" /> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="dis('1')" /> </td>
+            <td><input type="button" value="2" onclick="dis('2')" /> </td>
+            <td><input type="button" value="3" onclick="dis('3')" /> </td>
+            <td><input type="button" value="/" onclick="dis('/')" /> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="dis('4')" /> </td>
+            <td><input type="button" value="5" onclick="dis('5')" /> </td>
+            <td><input type="button" value="6" onclick="dis('6')" /> </td>
+            <td><input type="button" value="-" onclick="dis('-')" /> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="dis('7')" /> </td>
+            <td><input type="button" value="8" onclick="dis('8')" /> </td>
+
+            <td><input type="button" value="9" onclick="dis('9')" /> </td>
+            <td><input type="button" value="+" onclick="dis('+')" /> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="." onclick="dis('.')" /> </td>
+            <td><input type="button" value="0" onclick="dis('0')" /> </td>
+            <td><input type="button" value="=" onclick="solve()" /> </td>
+            <td><input type="button" value="*" onclick="dis('*')" /> </td>
+        </tr>
+    </table>
+</body>
+
+</html>
